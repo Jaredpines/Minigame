@@ -207,10 +207,10 @@ class Player {
                 this.bar.startRH = 160;
                 this.bar.startRX = 513;
                 this.bar.startRY = 418;
-                this.bar.startD = false;
-                this.bar.startL = false;
-                this.bar.startR = false;
-                this.bar.startU = false;
+                this.bar.startD = true;
+                this.bar.startL = true;
+                this.bar.startR = true;
+                this.bar.startU = true;
                 this.bar.timerD = 0;
                 this.bar.timerU = 0;
                 this.bar.timerL = 0;
@@ -235,6 +235,7 @@ class Player {
                     ASSET_MANAGER.playAsset("./music/Corruption.ogg");
                     ASSET_MANAGER.autoRepeat("./music/Corruption.ogg");
                 }
+                return;
             }else{
                 this.bar.r = -1;
             }
