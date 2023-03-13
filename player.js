@@ -13,6 +13,7 @@ class Player {
         this.scoreT = 0;
         this.dead = false;
         this.start = false;
+        this.c = 0;
     };
 
 
@@ -46,6 +47,51 @@ class Player {
             this.right = false;
             this.dead = true;
         }
+        if(this.down&&this.game.keys["a"]&& this.c > 10){
+            this.bar.startDW = 160;
+            this.bar.startDH = 65.25;
+            this.bar.startDX = 419;
+            this.bar.startDY = 513;
+            this.c = 0
+        }else if(this.game.keys["a"]){
+
+        }else{
+            this.c += 30*this.game.clockTick
+        }
+        if(this.left&&this.game.keys["a"]&& this.c > 10){
+            this.bar.startLW = 65.25;
+            this.bar.startLH = 160;
+            this.bar.startLX = 419;
+            this.bar.startLY = 418;
+            this.c = 0
+        }else if(this.game.keys["a"]){
+
+        }else{
+            this.c += 30*this.game.clockTick
+        }
+        if(this.right&&this.game.keys["a"]&& this.c > 10){
+            this.bar.startRW = 65.25;
+            this.bar.startRH = 160;
+            this.bar.startRX = 513;
+            this.bar.startRY = 419;
+            this.c = 0
+        }else if(this.game.keys["a"]){
+
+        }else{
+            this.c += 30*this.game.clockTick
+        }
+        if(this.up&&this.game.keys["a"]&& this.c > 10){
+            this.bar.startUW = 160;
+            this.bar.startUH = 65.25;
+            this.bar.startUX = 419;
+            this.bar.startUY = 418;
+            this.c = 0
+        }else if(this.game.keys["a"]){
+
+        }else{
+            this.c += 30*this.game.clockTick
+        }
+
     };
 
 
@@ -107,11 +153,15 @@ class Player {
                 this.bar.startRH = 160;
                 this.bar.startRX = 513;
                 this.bar.startRY = 418;
-                this.bar.startD = false;
-                this.bar.startL = false;
-                this.bar.startR = false;
-                this.bar.startU = false;
-                this.bar.timer = 0;
+                this.bar.startD = true;
+                this.bar.startL = true;
+                this.bar.startR = true;
+                this.bar.startU = true;
+                this.bar.timerD = 0;
+                this.bar.timerU = 0;
+                this.bar.timerL = 0;
+                this.bar.timerR = 0;
+                this.c = 0;
                 this.bar.difficulty = 100;
                 this.bar.r = 0;
                 this.score = 0;
@@ -161,7 +211,11 @@ class Player {
                 this.bar.startL = false;
                 this.bar.startR = false;
                 this.bar.startU = false;
-                this.bar.timer = 0;
+                this.bar.timerD = 0;
+                this.bar.timerU = 0;
+                this.bar.timerL = 0;
+                this.bar.timerR = 0;
+                this.c = 0;
                 this.bar.difficulty = 100;
                 this.bar.r = 0;
                 this.score = 0;

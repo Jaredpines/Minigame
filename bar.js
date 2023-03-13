@@ -43,12 +43,12 @@ class Bar {
             this.r = Math.floor(Math.random() * this.difficulty);
         }
         if(this.startD){
-            this.startDW += 1000*this.game.clockTick;
-            this.startDH += 250*this.game.clockTick;
-            this.startDX -= 500*this.game.clockTick;
-            this.startDY += 250*this.game.clockTick;
+            this.startDW += 1000*this.game.clockTick/(this.difficulty/30);
+            this.startDH += 250*this.game.clockTick/(this.difficulty/30);
+            this.startDX -= 500*this.game.clockTick/(this.difficulty/30);
+            this.startDY += 250*this.game.clockTick/(this.difficulty/30);
         }
-        if(this.timerD >= 100&&this.r==0){
+        if(this.timerD >= Math.floor(Math.random()*100)+100&&this.r==0&&this.startDY>1200){
             this.startDW = 160;
             this.startDH = 65.25;
             this.startDX = 419;
@@ -57,12 +57,12 @@ class Bar {
             this.startD = true;
         }
         if(this.startU){
-            this.startUW += 1000*this.game.clockTick;
-            this.startUH += 250*this.game.clockTick;
-            this.startUX -= 500*this.game.clockTick;
-            this.startUY -= 500*this.game.clockTick;
+            this.startUW += 1000*this.game.clockTick/(this.difficulty/30);
+            this.startUH += 250*this.game.clockTick/(this.difficulty/30);
+            this.startUX -= 500*this.game.clockTick/(this.difficulty/30);
+            this.startUY -= 500*this.game.clockTick/(this.difficulty/30);
         }
-        if(this.timerU >= 100&&this.r==1){
+        if(this.timerU >= Math.floor(Math.random()*100)+100&&this.r==1&&this.startUY<-500){
             this.startUW = 160;
             this.startUH = 65.25;
             this.startUX = 419;
@@ -71,12 +71,12 @@ class Bar {
             this.startU = true;
         }
         if(this.startL){
-            this.startLW += 250*this.game.clockTick;
-            this.startLH += 1000*this.game.clockTick;
-            this.startLX -= 500*this.game.clockTick;
-            this.startLY -= 500*this.game.clockTick;
+            this.startLW += 250*this.game.clockTick/(this.difficulty/30);
+            this.startLH += 1000*this.game.clockTick/(this.difficulty/30);
+            this.startLX -= 500*this.game.clockTick/(this.difficulty/30);
+            this.startLY -= 500*this.game.clockTick/(this.difficulty/30);
         }
-        if(this.timerL >= 100&&this.r==2){
+        if(this.timerL >= Math.floor(Math.random()*100)+100&&this.r==2&&this.startLX<-500){
             this.startLW = 65.25;
             this.startLH = 160;
             this.startLX = 419;
@@ -85,12 +85,12 @@ class Bar {
             this.startL = true;
         }
         if(this.startR){
-            this.startRW += 250*this.game.clockTick;
-            this.startRH += 1000*this.game.clockTick;
-            this.startRX += 250*this.game.clockTick;
-            this.startRY -= 500*this.game.clockTick;
+            this.startRW += 250*this.game.clockTick/(this.difficulty/30);
+            this.startRH += 1000*this.game.clockTick/(this.difficulty/30);
+            this.startRX += 250*this.game.clockTick/(this.difficulty/30);
+            this.startRY -= 500*this.game.clockTick/(this.difficulty/30);
         }
-        if(this.timerR >= 100&&this.r==3){
+        if(this.timerR >= Math.floor(Math.random()*100)+100&&this.r==3&&this.startRX>1200){
             this.startRW = 65.25;
             this.startRH = 160;
             this.startRX = 513;
